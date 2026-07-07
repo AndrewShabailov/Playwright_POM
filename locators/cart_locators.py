@@ -1,0 +1,5 @@
+cart_overview = 'h3.mb-4'
+cart_message = '.js_cart_lines'
+cart_step_label = '.o_wizard_step_active p.o_wizard_steplabel'
+cart_item_name = 'h6.h6'
+remove_item = 'a.js_delete_product'
