@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME  = 'PW-tests'
+        IMAGE_NAME  = 'pw-tests'
         PROJECT_DIR = '.'
     }
 
