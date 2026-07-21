@@ -24,7 +24,7 @@ pipeline {
         stage('Run tests') {
             steps {
                 dir("${PROJECT_DIR}") {
-                    bat "docker run --rm %IMAGE_NAME%"
+                    bat "docker run --rm -v %WORKSPACE%\\allure-results:/app/allure-results %IMAGE_NAME% || exit 0"
                 }
             }
         }
@@ -32,6 +32,10 @@ pipeline {
 
     post {
         always {
+            allure includeProperties: false,
+                   jdk: '',
+                   results: [[path: 'allure-results']]
+
             bat "docker image rm %IMAGE_NAME% || exit 0"
         }
     }
